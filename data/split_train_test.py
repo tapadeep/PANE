@@ -14,7 +14,7 @@ if __name__== '__main__':
     path = sys.argv[1]
     ratio = float(sys.argv[2])
     if ratio>0.5:
-        print "the test set ratio is too large..."
+        print("the test set ratio is too large...")
         exit(0)
 
     m = 0
