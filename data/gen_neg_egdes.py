@@ -13,13 +13,13 @@ if __name__ == '__main__':
     path = sys.argv[1]
     ratio = float(sys.argv[2])
     if ratio>0.5:
-        print "negative set ratio is too large..."
+        print ("negative set ratio is too large...")
         exit(0)
 
     m=0
     n=0
     flag = {}
-    print "loading..."
+    print ("loading...")
     with open(path, 'r') as fin:
         for line in fin:
             s, t = line.strip().split()
@@ -32,7 +32,7 @@ if __name__ == '__main__':
             m += 1
 
     num_neg = int(m*ratio)
-    print "generating..."
+    print ("generating...")
     neg_edges = []
     while len(neg_edges)<num_neg:
         s = randint(0, n)
