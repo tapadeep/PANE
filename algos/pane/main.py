@@ -8,7 +8,7 @@
 import time
 import datetime
 import argparse
-import cPickle as pickle
+import pickle
 import numpy as np
 import math
 import networkx as nx
