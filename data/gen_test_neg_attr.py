@@ -8,7 +8,7 @@
 
 import numpy as np
 import sys
-import cPickle as pickle
+import pickle
 import random
 from random import randint
 import scipy.sparse
@@ -26,7 +26,7 @@ if __name__ == '__main__':
     print("n=%d, d=%d, nnz=%d"%(n, d, nnz))
 
     num_test = int(nnz*ratio)
-    print "generating..."
+    print ("generating...")
 
     neg_edges = []
     while len(neg_edges)<num_test:
@@ -36,7 +36,7 @@ if __name__ == '__main__':
         if F[s,t]==0:
             neg_edges.append( (s,t) )
 
-    print "writing negative..."
+    print ("writing negative...")
     neg_path = path.replace('attrs.pkl', 'attr.neg.'+'{:.1f}'.format(1-ratio)+'.txt')
     with open(neg_path, 'w') as fout:
         for (s,t) in neg_edges:
@@ -48,7 +48,7 @@ if __name__ == '__main__':
     row_ids = row[ids]
     col_ids = col[ids]
 
-    print "writing test..."
+    print ("writing test...")
     test_path = path.replace('attrs.pkl', 'attr.test.'+'{:.1f}'.format(1-ratio)+'.txt')
     with open(test_path, "w") as fout:
         for i in range(num_test):
