@@ -42,7 +42,7 @@ if __name__ == '__main__':
         neg_edges.append( (s,t) )
             #flag[key] = 1
 
-    print "writing..."
+    print ("writing...")
     neg_path = path.replace('edgelist.txt', 'edgelist.neg.txt')
     with open(neg_path, 'w') as fout:
         for (s,t) in neg_edges:
