@@ -169,7 +169,7 @@ def load_data(args):
     return graph, features
 
 def save_emb(Xf,Xb,Yf,Yb,args):
-    folder="emb/"
+    folder="PANE/algos/pane/emb/"
     if args.mask>0:
         folder = "emb/mask/"
 
