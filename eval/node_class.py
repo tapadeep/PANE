@@ -81,7 +81,7 @@ if __name__ == '__main__':
     n = settings.DATA_INFO[args.data]['n']
     d = args.d
 
-    path_emb = folder + args.data + '.' + str(d) + '.bin'
+    path_emb = 'PANE/algos/pane/emb/' + args.data + '.' + str(d) + '.bin'
     print("loading "+path_emb)
     if args.algo=='pane':
         Xf = utils.load_emd(path_emb+".f", n, d/2, n-1)
