@@ -157,13 +157,13 @@ def load_data(args):
         feature_file = folder+args.data+"/attrs.npz"
         features = sparse.load_npz(feature_file)
     else:
-        features = pickle.load(open(feature_file))
+        features = pickle.load(open(feature_file,'rb'))
     
     print(features.shape)
     n = features.shape[0]
     print("loading from "+edge_file)
     graph = nx.read_edgelist(edge_file, create_using=nx.DiGraph(), nodetype=int)
-    for i in xrange(n):
+    for i in range(n):
         graph.add_node(i)
 
     return graph, features
