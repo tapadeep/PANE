@@ -122,7 +122,7 @@ def gen_emb(graph, adj, features, k, t):
     t3 = time.time()
     print("step 2 takes ", t3-t2, process.memory_info().rss/1024.0/1024.0)
     print("SVD....")
-    (U, s, Va) = fbpca.pca(Z, k/2, False, 5)
+    (U, s, Va) = fbpca.pca(Z, int(k/2), False, 5)
     s = np.diag(s)
     Xf = fbpca.mult(U, s)
     Yf = Va.T
@@ -130,7 +130,7 @@ def gen_emb(graph, adj, features, k, t):
     print(Xf.shape, Yf.shape)
 
     Xb = fbpca.mult(Y, Yf)
-    model = mycd.NMF(n_components=k/2, updateH=True, max_iter=t)
+    model = mycd.NMF(n_components=int(k/2), updateH=True, max_iter=t)
     Xb = model.fit_transform(Y, Xb, Yf.T)
     Yf = model.components_.T
 
