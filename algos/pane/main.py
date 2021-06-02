@@ -142,7 +142,7 @@ def gen_emb(graph, adj, features, k, t):
 
 
 def load_data(args):
-    folder = "../../data/"
+    folder = "PANE/data/"
     if args.full>0:
         edge_file = folder+args.data+"/edgelist.txt"
     else:
