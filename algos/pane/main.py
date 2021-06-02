@@ -231,3 +231,11 @@ if __name__=='__main__':
 
     print("saving embeddings...")
     save_emb(Xf,Xb,Yf,Yb,args)
+    a=dict()
+    a['Xf']=Xf
+    a['Xb']=Xb
+    a['Yf']=Yf
+    a['Yb']=Yb
+    out_file=open('embeddings.pth','wb')
+    pickle.dump(a,out_file)
+    out_file.close()
