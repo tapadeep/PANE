@@ -81,11 +81,11 @@ if __name__ == '__main__':
     n = settings.DATA_INFO[args.data]['n']
     d = args.d
 
-    path_emb = 'PANE/algos/pane/emb/' + args.data + '.' + str(d) + '.bin'
+    path_emb = folder + args.data + '.' + str(d) + '.bin'
     print("loading "+path_emb)
     if args.algo=='pane':
-        Xf = utils.load_emd(path_emb+".f", n, d/2, n-1)
-        Xb = utils.load_emd(path_emb+".b", n, d/2, n-1)
+        Xf = utils.load_emd(path_emb+".f", n, int(d/2), n-1)
+        Xb = utils.load_emd(path_emb+".b", n, int(d/2), n-1)
         Xf = preprocessing.normalize(Xf, norm='l2', axis=1)
         Xb = preprocessing.normalize(Xb, norm='l2', axis=1)
         X = np.hstack([Xf, Xb])
