@@ -17,7 +17,7 @@ if __name__ == '__main__':
     path = sys.argv[1]
     ratio = float(sys.argv[2])
 
-    F = pickle.load(open(path))
+    F = pickle.load(open(path,'rb'))
     print(F.shape)
     n = F.shape[0]
     d = F.shape[1]
