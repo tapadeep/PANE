@@ -220,11 +220,11 @@ if __name__ == '__main__':
 
     path_emb = folder + args.data + '.' + str(d) + '.train.bin'
     if args.algo=="pane":
-        Xf = utils.load_emd(path_emb+".f", n, d/2, max_id)
-        Xb = utils.load_emd(path_emb+".b", n, d/2, max_id)
+        Xf = utils.load_emd(path_emb+".f", n, int(d/2), max_id)
+        Xb = utils.load_emd(path_emb+".b", n, int(d/2), max_id)
         path_attr_emb = folder + args.data + '.' + str(d) + '.train.a.bin'
-        Yf = utils.load_attr_emd(path_attr_emb+".f",d/2)
-        Yb = utils.load_attr_emd(path_attr_emb+".b",d/2)
+        Yf = utils.load_attr_emd(path_attr_emb+".f",int(d/2))
+        Yb = utils.load_attr_emd(path_attr_emb+".b",int(d/2))
     else:
         X = utils.load_emd(path_emb, n, d, max_id)
         print(X.shape)
