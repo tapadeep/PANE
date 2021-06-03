@@ -142,7 +142,7 @@ def gen_emb(graph, adj, features, k, t):
 
 
 def load_data(args):
-    folder = "PANE/data/"
+    folder = "../../data/"
     if args.full>0:
         edge_file = folder+args.data+"/edgelist.txt"
     else:
@@ -169,7 +169,7 @@ def load_data(args):
     return graph, features
 
 def save_emb(Xf,Xb,Yf,Yb,args):
-    folder="PANE/algos/pane/emb/"
+    folder="emb/"
     if args.mask>0:
         folder = "emb/mask/"
 
