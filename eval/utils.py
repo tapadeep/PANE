@@ -20,7 +20,7 @@ def load_emd(file_name, n, d, max_id):
     
     if len(arr)== n*d:
         print("full embedding")
-        X = arr.reshape(n, int(d))
+        X = arr.reshape(n, d)
     elif (max_id+1)!=n and len(arr)== (max_id+1)*d:
         print("parital embedding")
         X = np.zeros((n, d), dtype=np.float)
