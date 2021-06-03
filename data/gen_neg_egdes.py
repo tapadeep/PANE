@@ -13,7 +13,7 @@ if __name__ == '__main__':
     path = sys.argv[1]
     ratio = float(sys.argv[2])
     if ratio>0.5:
-        print ("negative set ratio is too large...")
+        print ('negative set ratio is too large...')
         exit(0)
 
     m=0
